@@ -195,8 +195,6 @@ def sample_graph(G_linklist,node_number,degree_sequence,starting_node,sample_rat
     RW_graph = set(starting_node)
 
     
-
-
     for j in range(30):
         original_distribution = deepcopy(prob_distribution)
         for node in RW_graph:
@@ -208,8 +206,7 @@ def sample_graph(G_linklist,node_number,degree_sequence,starting_node,sample_rat
             RW_graph = RW_graph.union(neighbors)
         
             if len(RW_graph) >= 7000:
-                break
-        
+                break      
 
     for i in range(30):
         for node in subgraph:
@@ -300,11 +297,9 @@ def random_walk(G,initial_prob,subspace_dim=3,walk_steps=3):
     Transition matrix needs to be calculated according to adjacent matrix G.
     
     """
-    #assert type(G) == np.ndarray, "The adjacent matrix of the graph is not a numpy array"
     assert type(initial_prob) == np.ndarray, "Initial probability distribution is \
                                              not a numpy array"
-    #assert initial_prob.sum() >= 0.95 and initial_prob.sum() <= 1.05, "probability vector has to sum to 1"
-    
+       
     # Transform the adjacent matrix to a laplacian matrix P
     P = adj_to_Laplacian(G)
     
@@ -357,9 +352,7 @@ def min_one_norm(B,initial_seed,seed):
     return result 
 
 def seed_expand_auto(G,seedset,min_comm_size,max_comm_size,expand_step=None,subspace_dim=None,walk_steps=None,biased=True):
-    #assert type(G) == np.ndarray, "The input matrix is not a numpy array"
-    #assert type(ground_truth_comm) == np.ndarray, "The input community is not a numpy array"
-
+  
     degree = []
     n = G.shape[0]
     for x in range(n):
@@ -373,6 +366,7 @@ def seed_expand_auto(G,seedset,min_comm_size,max_comm_size,expand_step=None,subs
 
     Orth_Prob_Matrix = random_walk(G,initial_prob,subspace_dim,walk_steps)
     initial_seed = seedset
+    
     # Initialization
     detected = list(seedset)
     [r,c] = Orth_Prob_Matrix.shape
@@ -382,9 +376,9 @@ def seed_expand_auto(G,seedset,min_comm_size,max_comm_size,expand_step=None,subs
     F1_scores = []
     Jaccard_scores = []
     detected_comm = []
-    #conductance = []
 
-    #temp_ncut = np.zeros(30)
+
+   
     global_conductance = np.zeros(30)
     global_conductance[-1] = 1000000 # set the last element to be infinitely large
     global_conductance[-2] = 1000000
@@ -449,7 +443,6 @@ def global_minimum(sequence,start_index):
         list(sequence).append(0)
     for i in range(seq_length - 40):
         if sequence[i] < sequence[i-1] and sequence[i] < sequence[i+1]:
-            #print "Current local minimum is:", i + start_index
             count_larger = 0
             count_smaller = 0
             for j in range(1,32):
