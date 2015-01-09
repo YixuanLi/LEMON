@@ -6,7 +6,7 @@ Usage
 
 ######Example Usage######
 
-``$python LEMON.py --out output.txt``
+``$python LEMON.py -f ../example_graphs/amazon/graph -g  ../example_graphs/amazon/community --sd ../example_graphs/amazon/seed --out output.txt``
 
 ######Command Options######
 
@@ -24,9 +24,9 @@ Usage
 
     The format of a ground truth community is a space delimited line of node IDs , e.g:
   
-        1 4 8 14 20 21 22                    # community 1
+        1 4 8 14 20 21 22                         # community 1
         2 5 3 6 7 15 16 17 18 19                  # community 2
-        9 10 11 12 13 23             # community 3
+        9 10 11 12 13 23                          # community 3
 
 **--sd**: initial seed set input file [*default*:``example_graphs/amazon/seed``]
 
