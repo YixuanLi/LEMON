@@ -6,7 +6,7 @@ Usage
 
 ######Example Usage######
 
-``$python LEMON.py -f ../example_graphs/amazon/graph -g  ../example_graphs/amazon/community --sd ../example_graphs/amazon/seed --out output.txt``
+    $python LEMON.py -f ../example_graphs/amazon/graph -g  ../example_graphs/amazon/community --sd ../example_graphs/amazon/seed --out output.txt
 
 ######Command Options######
 
