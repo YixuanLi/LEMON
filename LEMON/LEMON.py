@@ -518,16 +518,16 @@ if __name__=='__main__':
     parser.add_option("-d", "--delimiter", dest="delimiter", default=' ',
                       help="delimiter of input & output files [default: space]")
 
-    parser.add_option("-f", "--input network file", dest="network_file", default="../example_graphs/amazon/graph",
+    parser.add_option("-f", "--input network file", dest="network_file", default="../example/amazon/graph",
                       help="input file of edge list for clustering [default: example_graphs/amazon/graph]")
 
-    parser.add_option("-g", "--input community ground truth file", dest="groundtruth_community_file", default="../example_graphs/amazon/community",
+    parser.add_option("-g", "--input community ground truth file", dest="groundtruth_community_file", default="../example/amazon/community",
                       help="input file of ground truth community membership [default: example_graphs/amazon/community]")
 
     parser.add_option("--out", "--output file", dest="output_file", default="output.txt",
                       help="output file of detected community [default: output.txt]")
 
-    parser.add_option("--sd", "--input seed set file", dest="seed_set_file", default="../example_graphs/amazon/seed",
+    parser.add_option("--sd", "--input seed set file", dest="seed_set_file", default="../example/amazon/seed",
                       help="input file of initial seed set [default: example_graphs/amazon/seed]")
 
     parser.add_option("-c", "--minimum community size", dest="min_comm_size", default=20,
