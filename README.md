@@ -1,6 +1,15 @@
 # LEMON
 A local algorithm for fast, high-precision overlapping community detection. 
 
+Requirements
+------------
+* numpy
+* scipy
+* pulp ([https://pypi.python.org/pypi/PuLP](https://pypi.python.org/pypi/PuLP))
+
+(may have to be independently installed) 
+
+
 Usage
 -----
 
@@ -54,10 +63,3 @@ Usage
 
 The full list of command line options is available with ``$python LEMON.py --help``
 
-Requirements
-------------
-* numpy
-* scipy
-* pulp ([https://pypi.python.org/pypi/PuLP](https://pypi.python.org/pypi/PuLP))
-
-(may have to be independently installed) 
