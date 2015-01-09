@@ -24,17 +24,15 @@ import numpy as np
 import math 
 import pulp                       # You need to manually install this package in order to run this code
 import sys
-
+import random
+import gc
 
 from copy import deepcopy
-import random
 from scipy import io as spio
 from scipy import sparse
 from scipy import linalg as splin
 from optparse import OptionParser
-import time as tm
-import networkx as nx
-import gc
+
 
 
 
@@ -196,7 +194,7 @@ def sample_graph(G_linklist,node_number,degree_sequence,starting_node,sample_rat
     subgraph = set(starting_node)
     RW_graph = set(starting_node)
 
-    tic1 = tm.clock()
+    
 
 
     for j in range(30):
@@ -433,8 +431,6 @@ def seed_expand_auto(G,seedset,min_comm_size,max_comm_size,expand_step=None,subs
             Jind = 0
 
         global_conductance[iteration] = cond
-        #print "global_conductance[iteration-1]",iteration-1,global_conductance[iteration-1]
-        #print "global_conductance[iteration]", iteration,",",global_conductance[iteration]
         if global_conductance[iteration-1] <= global_conductance[iteration] and global_conductance[iteration-1] <=global_conductance[iteration-2]:
             flag = False
            
@@ -466,7 +462,6 @@ def global_minimum(sequence,start_index):
                 print "first glocal minimum found:",i + start_index
                 detected_size = i + start_index
                 cond = sequence[i]
-                #print "Conductance is:", cond
                 break
     return detected_size, cond
      
@@ -504,23 +499,6 @@ def cal_Jaccard(detected_comm,ground_truth_comm):
     return Jind
 
 
-
-def find_best_match_comm(detected_comm,ground_truth_comms):
-    intersection_record = 0
-    comm_index_record = 0
-    #print "ground_truth_comms len", len(ground_truth_comms)
-    for i in range(len(ground_truth_comms)):
-        
-        if len(list(set(detected_comm).intersection(set(ground_truth_comms[i])))) > intersection_record:
-            highest_intersection_record = list(set(detected_comm).intersection(set(ground_truth_comms[i])))
-            comm_index_record = i
-            print i, ground_truth_comms[i]
-            print len(list(set(detected_comm).intersection(set(ground_truth_comms[i])))), "intersections"
-
-            intersection_record = len(list(set(detected_comm).intersection(set(ground_truth_comms[i]))))
-    return comm_index_record, ground_truth_comms[comm_index_record]
-
-
 if __name__=='__main__':
 
 
@@ -546,8 +524,8 @@ if __name__=='__main__':
     parser.add_option("-g", "--input community ground truth file", dest="groundtruth_community_file", default="../example_graphs/amazon/community",
                       help="input file of ground truth community membership [default: example_graphs/amazon/community]")
 
-    parser.add_option("--out", "--output file", dest="output_file", default="output",
-                      help="output file of detected community [default: output]")
+    parser.add_option("--out", "--output file", dest="output_file", default="output.txt",
+                      help="output file of detected community [default: output.txt]")
 
     parser.add_option("--sd", "--input seed set file", dest="seed_set_file", default="../example_graphs/amazon/seed",
                       help="input file of initial seed set [default: example_graphs/amazon/seed]")
@@ -599,6 +577,7 @@ if __name__=='__main__':
     seedset = np.array(seedset) - 1
     
 
+    # modify the "test_comm" if you want to test some other ground truth communities
     test_comm = np.array([14833, 42658, 43004, 58660 ,14835, 14836, 14837 ,106584, 115338 ,42659 ,58661 ,106585 ,288614 ,106586 ,14838 ,106587 ,302943 ,14839 ,14840 ,302944 ,115339, 106588 ,106589 ,206424 ,106590 ,42660 ,106591, 42661, 115340, 293641, 106592])
     test_comm = test_comm - 1
     
