@@ -15,6 +15,7 @@ Usage
 
 ######Example Usage######
 
+    $cd LEMON
     $python LEMON.py -f ../example/amazon/graph -g  ../example/amazon/community --sd ../example/amazon/seed --out output.txt
 
 ######Command Options######
