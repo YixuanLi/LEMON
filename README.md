@@ -15,6 +15,7 @@ Requirements
 Dataset Information
 --------
 * amazon dataset (available at [http://snap.stanford.edu/data/com-Amazon.html](http://snap.stanford.edu/data/com-Amazon.html))
+* ``936`` communities with ground truth size ``>= 20``.
 * nodes are products; edges are co-purchase relationship
 * nodes: ``334863``, edges: ``925872``
 * maximum membership per node: ``49``
