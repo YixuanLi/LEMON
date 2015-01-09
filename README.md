@@ -21,7 +21,7 @@ Usage
 
 **-d**: delimiter of input graph and community files [*default: space*]
 
-**-f**:  input network file [*default*: ``example_graphs/amazon/graph``]
+**-f**:  input network file [*default*: ``example/amazon/graph``]
 
   The format of a graph is edgelist, e.g::
   
@@ -29,7 +29,7 @@ Usage
         1 3
         1 4
         ...
-**-g**:  input ground truth community file [*default*: ``example_graphs/amazon/community``]
+**-g**:  input ground truth community file [*default*: ``example/amazon/community``]
 
     The format of a ground truth community is a space delimited line of node IDs , e.g:
   
@@ -37,7 +37,7 @@ Usage
         2 5 3 6 7 15 16 17 18 19                  # community 2
         9 10 11 12 13 23                          # community 3
 
-**--sd**: initial seed set input file [*default*:``example_graphs/amazon/seed``]
+**--sd**: initial seed set input file [*default*:``example/amazon/seed``]
 
     The format of seed set is a single line of space delimited node IDs, e.g:
     
