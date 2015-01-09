@@ -1,6 +1,6 @@
 # LEMON
 The example implements a large scale overlapping community detection method 
-based on local spectral clustering. The program adopts a local expansion method in order to identify the community members from a few exemplary seed members. The algorithm finds the community by seeking a sparse vector in the span of the local spectra such that the seeds are in its support. LEMON can achieve the highest detection accuracy among state-of-the-art proposals. The running time depends on the size of the community rather than that of the entire graph. 
+based on **local spectral clustering**. The program adopts a local expansion method in order to identify the community members from a few exemplary seed members. The algorithm finds the community by seeking a sparse vector in the span of the local spectra such that the seeds are in its support. LEMON can achieve the highest detection accuracy among state-of-the-art proposals. The running time depends on the size of the community rather than that of the entire graph. 
 
 Here we use Amazon dataset (obtained from [SNAP](http://snap.stanford.edu/data/com-Amazon.html) website) as an illustration. You may switch to other dataset with corresponding file format as well. Note that some parameters might need to be adjusted accordingly based on the properties of network under test.
 
