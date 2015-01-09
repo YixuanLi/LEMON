@@ -8,7 +8,9 @@ Usage
 
 ``$python LEMON.py --out output.txt``
 
+######Command Options######
 
+**-d**: delimiter of input graph and community files [*default: space*]
 
 **-f**:  input network file [*default*: ``example_graphs/amazon/graph``]
 
@@ -22,10 +24,15 @@ Usage
 
     The format of a ground truth community is a space delimited line of node IDs, e.g:
   
-        1 4 8                      # community 1
-        2 5 3 6 7                  # community 2
-        9 10 11 12 13              # community 3
-**-d**: delimiter of input graph and community files [*default: space*]
+        1 4 8 14 20 21 22                    # community 1
+        2 5 3 6 7 15 16 17 18 19                  # community 2
+        9 10 11 12 13 23             # community 3
+
+**--sd**: initial seed set input file [*default*:``example_graphs/amazon/seed``]
+
+    The format of seed set is a single line of space delimited node IDs, e.g:
+    
+        2 5
 
 **--out**: output file path [*default*: ``output.txt``]
 
@@ -33,10 +40,13 @@ Usage
     (quantified by F1 score), e.g:
 
         # detected community:
-        [2,5,3,6,7]
+        [2,5,3,6,7,15,16,17,18,19]
         # F1 score: 1.0
-  
-    
+
+######To View Full Command List######
+
+The full list of command line options is available with ``$python LEMON.py --help``
+
 Requirements
 ------------
 * numpy
