@@ -14,7 +14,7 @@ Usage
 
 **-f**:  input network file [*default*: ``example_graphs/amazon/graph``]
 
-    The format of a graph is edgelist, e.g::
+  The format of a graph is edgelist, e.g::
   
         1 2
         1 3
@@ -22,7 +22,7 @@ Usage
         ...
 **-g**:  input ground truth community file [*default*: ``example_graphs/amazon/community``]
 
-    The format of a ground truth community is a space delimited line of node IDs, e.g:
+    The format of a ground truth community is a space delimited line of node IDs , e.g:
   
         1 4 8 14 20 21 22                    # community 1
         2 5 3 6 7 15 16 17 18 19                  # community 2
@@ -42,6 +42,13 @@ Usage
         # detected community:
         [2,5,3,6,7,15,16,17,18,19]
         # F1 score: 1.0
+
+**-c**: minimum community size [*default*: 20]
+
+**-C**: maximum community size [*default*: 100]
+
+**-e**: expand step [*default*: 6]
+
 
 ######To View Full Command List######
 
