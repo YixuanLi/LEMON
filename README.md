@@ -4,6 +4,8 @@ based on **local expansion via minimum one norm**. The program adopts a local ex
 
 Here we use Amazon dataset (obtained from [SNAP](http://snap.stanford.edu/data/com-Amazon.html) website) as an illustration. You may switch to other datasets with corresponding file format as well. Note that some parameters might need to be adjusted accordingly based on the properties of network under test.
 
+
+```
 @inproceedings{li2015uncovering,
   title={Uncovering the small community structure in large networks: a local spectral approach},
   author={Li, Yixuan and He, Kun and Bindel, David and Hopcroft, John E},
@@ -12,6 +14,7 @@ Here we use Amazon dataset (obtained from [SNAP](http://snap.stanford.edu/data/c
   year={2015},
   organization={International World Wide Web Conferences Steering Committee}
 }
+```
 
 Requirements
 ------------
